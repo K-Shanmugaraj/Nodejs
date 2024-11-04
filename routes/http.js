@@ -34,26 +34,8 @@ http.createServer((req, res) => {
     //     });
     // res.write("Node Server started....");
     // res.end();
-    const method = req.method;
-    const url = req.url;
-    if(method === 'GET' && url.indexOf('getAllBlogPosts') !== -1) {
-        readAllBlogPosts(req, res);
-        // res.write("Get All Blog Posts");
-        // res.end();
-    } else if(method === 'GET' && url.indexOf('getSpecificBlogPosts') !== -1) {
-        res.write("Get Specific Blog Posts");
-        res.end();
-    } else if(method === 'POST' && url.indexOf('createBlogPost') !== -1) {
-        res.write("Create Blog Post");
-        res.end();
-    } else if(method === 'PUT' && url.indexOf('updateBlogPost') !== -1) {
-        res.write("Update Blog Post");
-        res.end();
-    } else if(method === 'DELETE' && url.indexOf('deleteBlogPost') !== -1) {
-        res.write("Delete Blog Post");
-        res.end();
-    } else {
-        res.write("NO Routes match found!");
-        res.end();
-    }
+    const method=req.method;
+    const url=req.url;
+    res.write("get method")
+    res.end()
 }).listen(4000, () => console.log("Server has started in port: 4000"));
